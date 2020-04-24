@@ -14,4 +14,6 @@ class LocationForm(forms.ModelForm):
 		fields = ('name', 'phone_number', 'address', 'website', 'notes')
 		labels = {
             'phone_number': 'Phone Number (e.g. 716-555-5555)',
+            'website': 'Website (e.g. https://www.google.com)',
+            'notes': 'Donation Requests'
         }

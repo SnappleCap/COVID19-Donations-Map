@@ -10,6 +10,7 @@
   <title>COVID-19 Donations Map</title>
   <link rel="stylesheet" type="text/css" href="{% static 'googleplaces/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'googleplaces/L.Control.Locate.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'googleplaces/leaflet-routing-machine.css' %}">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -35,6 +36,17 @@
       L.control.locate({
         setView: 'always',
         drawCircle: false
+      }).addTo(map);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.Routing.control({
+        waypoints: [
+          L.latLng(57.74, 11.94),
+          L.latLng(57.6792, 11.949)
+        ],
+        routeWhileDragging: true
       }).addTo(map);
       map.addControl(new L.Control.Fullscreen());
     }
@@ -65,6 +77,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'googleplaces/leaflet-routing-machine.js' %}">
   
 </body>
 </html>
