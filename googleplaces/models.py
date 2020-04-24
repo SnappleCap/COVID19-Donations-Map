@@ -5,7 +5,7 @@ from django.db import models
 class Location(models.Model):
 	name = models.CharField(max_length=256)
 	address = models.CharField(max_length=100)
-	phone_number = PhoneNumberField(required=True)
+	phone_number = PhoneNumberField()
 	geom = PointField()
 	website = models.CharField(max_length=100)
 	notes = models.CharField(max_length=256)
