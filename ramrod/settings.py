@@ -127,6 +127,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
+PHONENUMBER_DEFAULT_REGION = 'US'
+
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (42.8864, -78.8784),
     'DEFAULT_ZOOM': 10,
