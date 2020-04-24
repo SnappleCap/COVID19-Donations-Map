@@ -25,7 +25,7 @@ SECRET_KEY = 'us#&+!4ecf=d&x)rmj=8kfux-4ce**w%7e0w_f(=9!a!)($h1e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['covid19-donations-map.herokuapp.com']
 
 
 # Application definition
