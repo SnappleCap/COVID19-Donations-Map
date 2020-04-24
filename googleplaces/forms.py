@@ -12,3 +12,6 @@ class LocationForm(forms.ModelForm):
 	class Meta:
 		model = LocationModel
 		fields = ('name', 'phone_number', 'address', 'website', 'notes')
+		labels = {
+            'phone_number': 'Phone Number (e.g. 716-555-5555)',
+        }
