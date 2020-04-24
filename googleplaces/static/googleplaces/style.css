@@ -1,0 +1,8 @@
+html, body {
+	font-family: 'Open Sans', sans-serif;
+	background-image: url('cartographer.png');
+}
+
+.leaflet-container {
+	
+}
