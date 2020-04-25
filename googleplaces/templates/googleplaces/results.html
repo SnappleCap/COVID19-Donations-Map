@@ -45,11 +45,10 @@
       L.Routing.control({
         router: L.Routing.mapbox('pk.eyJ1IjoiZ2xlbm5vd28iLCJhIjoiY2s5ZXYzbGJ6MDZmZDNycGZpcXZhMTZxOSJ9.glRBSHSUauaw5v5guedaVQ'),
         routeWhileDragging: true,
-        geocoder: L.Control.Geocoder.mapbox()
+        geocoder: L.Control.Geocoder.mapbox('pk.eyJ1IjoiZ2xlbm5vd28iLCJhIjoiY2s5ZXYzbGJ6MDZmZDNycGZpcXZhMTZxOSJ9.glRBSHSUauaw5v5guedaVQ')
       }).addTo(map);
       map.addControl(new L.Control.Fullscreen());
       map.setView([42.8864, -78.8784],10);
-      geocoder.suggest();
     }
   </script>
 
