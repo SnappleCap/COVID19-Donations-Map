@@ -44,14 +44,11 @@
 
       L.Routing.control({
         router: L.Routing.mapbox('pk.eyJ1IjoiZ2xlbm5vd28iLCJhIjoiY2s5ZXYzbGJ6MDZmZDNycGZpcXZhMTZxOSJ9.glRBSHSUauaw5v5guedaVQ'),
-        waypoints: [
-          L.latLng(57.74, 11.94),
-          L.latLng(57.6792, 11.949)
-        ],
         routeWhileDragging: true,
         geocoder: L.Control.Geocoder.nominatim()
       }).addTo(map);
       map.addControl(new L.Control.Fullscreen());
+      map.setView([42.8864, -78.8784],10);
     }
   </script>
 
