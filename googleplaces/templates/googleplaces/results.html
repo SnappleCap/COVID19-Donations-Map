@@ -31,6 +31,13 @@
       }
     }
 
+    function createButton(label, container) {
+      var btn = L.DomUtil.create('button', '', container);
+      btn.setAttribute('type', 'button');
+      btn.innerHTML = label;
+      return btn;
+    }
+
     function map_init(map, options) {
       L.geoJSON(collection, {onEachFeature: onEachFeature}).addTo(map);
       L.control.locate({
@@ -47,13 +54,6 @@
       }).addTo(map);
 
       map.addControl(new L.Control.Fullscreen());
-
-      function createButton(label, container) {
-        var btn = L.DomUtil.create('button', '', container);
-        btn.setAttribute('type', 'button');
-        btn.innerHTML = label;
-        return btn;
-      }
 
       map.on('click', function(e) {
         var container = L.DomUtil.create('div'),
