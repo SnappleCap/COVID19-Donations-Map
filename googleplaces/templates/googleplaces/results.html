@@ -42,14 +42,39 @@
       }).addTo(map);
 
       L.Routing.control({
-        waypoints: [
-          L.latLng(57.74, 11.94),
-          L.latLng(57.6792, 11.949)
-        ],
         router: L.Routing.mapbox('pk.eyJ1IjoiZ2xlbm5vd28iLCJhIjoiY2s5ZXYzbGJ6MDZmZDNycGZpcXZhMTZxOSJ9.glRBSHSUauaw5v5guedaVQ'),
         routeWhileDragging: true
       }).addTo(map);
+
       map.addControl(new L.Control.Fullscreen());
+
+      function createButton(label, container) {
+        var btn = L.DomUtil.create('button', '', container);
+        btn.setAttribute('type', 'button');
+        btn.innerHTML = label;
+        return btn;
+      }
+
+      map.on('click', function(e) {
+        var container = L.DomUtil.create('div'),
+          startBtn = createButton('Start from this location', container),
+          destBtn = createButton('Go to this location', container);
+
+        L.popup()
+          .setContent(container)
+          .setLatLng(e.latlng)
+          .openOn(map);
+
+        L.DomEvent.on(startBtn, 'click', function() {
+          control.spliceWaypoints(0, 1, e.latlng);
+          map1.closePopup();
+        });
+
+        L.DomEvent.on(destBtn, 'click', function() {
+          control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+          map1.closePopup();
+        });
+      });
     }
   </script>
 
